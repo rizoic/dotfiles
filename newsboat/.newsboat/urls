@@ -34,3 +34,8 @@ http://www.cell.com/cell-reports/current.rss biJournals
 # Science Group
 ## Science
 http://science.sciencemag.org/rss/current.xml biJournals
+
+# Adding bioarxiv
+## Bioarxiv Bioinformatics
+http://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics
+
