@@ -38,4 +38,6 @@ http://science.sciencemag.org/rss/current.xml biJournals
 # Adding bioarxiv
 ## Bioarxiv Bioinformatics
 http://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics
+## Bioarxiv Cancer Biology
+http://connect.biorxiv.org/biorxiv_xml.php?subject=cancer_biology
 
