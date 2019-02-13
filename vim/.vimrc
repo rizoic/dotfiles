@@ -36,5 +36,5 @@ highlight SpellBad cterm=underline ctermfg=186
 " ----------GIT GUTTER----------------
 highlight GitGutterAdd ctermfg=40
 highlight GitGutterChange ctermfg=220
-highlight GitGutterChange ctermfg=160
+highlight GitGutterDelete ctermfg=160
 highlight GitGutterChangeDelete ctermfg=220
