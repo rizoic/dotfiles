@@ -14,6 +14,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'WolfgangMehner/bash-support'
 " Adding support for markdown
 Plug 'gabrielelana/vim-markdown'
+" Adding support for gitgutter
+Plug 'airblade/vim-gitgutter'
+"Adding support for seeing colours
+Plug 'guns/xterm-color-table.vim'
 " Ending the plugin stuff
 call plug#end()
 " --------------------------------------
@@ -26,5 +30,11 @@ au BufNewFile,BufRead *.smk set syntax=snakemake
 set pastetoggle=<F3>
 
 " -----------SPELL CHECK--------------
-hi clear SpellBad
-hi SpellBad cterm=underline ctermfg=186
+highlight clear SpellBad
+highlight SpellBad cterm=underline ctermfg=186
+
+" ----------GIT GUTTER----------------
+highlight GitGutterAdd ctermfg=40
+highlight GitGutterChange ctermfg=220
+highlight GitGutterChange ctermfg=160
+highlight GitGutterChangeDelete ctermfg=220
