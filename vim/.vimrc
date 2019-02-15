@@ -9,8 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 " A status bar for vim
 Plug 'itchyny/lightline.vim'
-" Adding support for bash
-Plug 'WolfgangMehner/bash-support'
 " Adding support for markdown
 Plug 'gabrielelana/vim-markdown'
 " Adding support for gitgutter
@@ -37,3 +35,7 @@ highlight GitGutterAdd ctermfg=40
 highlight GitGutterChange ctermfg=220
 highlight GitGutterDelete ctermfg=160
 highlight GitGutterChangeDelete ctermfg=220
+
+" ----------OTHER OPTS---------------
+set number
+
