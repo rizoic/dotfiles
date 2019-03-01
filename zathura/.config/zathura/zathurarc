@@ -1,0 +1,9 @@
+# Open document in fit-width mode by default
+set window-height 1020
+set window-width 1920
+set adjust-open width
+
+# Allow to quit with escape
+map <Esc> quit
+map + zoom in
+map - zoom out

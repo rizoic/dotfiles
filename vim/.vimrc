@@ -15,6 +15,8 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 "Adding support for seeing colours
 Plug 'guns/xterm-color-table.vim'
+"Adding support for ranger vim
+Plug 'francoiscabrol/ranger.vim'
 " Ending the plugin stuff
 call plug#end()
 " --------------------------------------
@@ -37,5 +39,13 @@ highlight GitGutterDelete ctermfg=160
 highlight GitGutterChangeDelete ctermfg=220
 
 " ----------OTHER OPTS---------------
+" Show line numbers
 set number
+" Dont continute comments on the next line
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+" Easily wwitch between buffers
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
