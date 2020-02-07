@@ -29,6 +29,49 @@ function extract(){
 
 # A function to initialize an analysis directory
 function setupanalysis(){
-	mkdir -p input/{resources,raw,processed} results src && touch .gitignore
-	printf "*.bam\n*.bai\n*.fastq.gz\n*.fq.gz\n*.bw\n" > .gitignore
+	mkdir -p data/{external,raw,processed} results src && touch .gitignore README.md
+	printf "*.bam\n*.bai\n*.fastq.gz\n*.fq.gz\n*.bw\n*.gtf\n" > .gitignore
+}
+
+# A function to safely remove a mounted hard disk from the terminal
+function safelyremove(){
+	{
+		udisksctl unmount -b $1
+		udisksctl power-off -b $1
+	}||{
+		fuser -m $1
+	}
+}
+
+# A function to read man pages in a better way
+function manpdf(){
+	man -Tpdf $1|zathura -
+}
+
+# Convert man pages to coloured ones by default
+function man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
+
+# Get the rupee symbol in clipboard
+# Needs xclip
+function rupee(){
+	echo '₹'|xclip -selection clipboard
+}
+
+# Try to have a zpreview
+function zpreview(){
+	zcat $1|head -n 100
+}
+
+function define(){ 
+    curl -s https://www.vocabulary.com/dictionary/$1|grep 'og:description'|sed 's/[0-9][0-9][0-9]//g'|parallel --rpl "{def} s/.*content=\"(.*)\".*/\1/" "echo {def}"|sed -e 's/\&\#\;//g';
 }

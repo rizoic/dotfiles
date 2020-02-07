@@ -26,4 +26,12 @@ export EDITOR=vim
 # Set the node path
 export NODE_PATH=/usr/local/lib/node_modules
 
+# LD library path
+export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Ok this adds support for colours. Enjoy
+export TERM=xterm-256color
 

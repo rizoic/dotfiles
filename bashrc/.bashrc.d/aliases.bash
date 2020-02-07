@@ -19,7 +19,7 @@ alias tn='tmux new -s'
 alias tl='tmux ls'
 
 # Quickly start a jupyter notebook
-alias jn="jupyter notebook"
+alias jn='tmux new-session -d -s "jupyter" jupyter notebook'
 
 # Lets accept 1 out of 5 times you are going to type it sl. :)
 alias sl="ls"
@@ -33,12 +33,16 @@ alias lcalc="libreoffice --calc"
 
 # Alias for xclip
 # For the default clipboard
-alias c='xclip -selection clipboard'
+alias c='xargs echo -n|xclip -selection clipboard'
 alias v='xclip -selection clipboard -o'
 
 # Launch ranger
 alias r='ranger'
+alias rcd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-# Launch sublime text
-alias s='subl'
+# Make rm safer by pointing it to safe-rm
+alias rm='safe-rm'
+
+# Make a youtube audio player
+alias plya='tmux new-session -d -s "mpv" mpv --no-video'
 
